@@ -17,7 +17,8 @@ function About () {
               <p>
                 I'm currently working as a Software Engineer Intern at ByteNet Solutions.
                 I am a full-stack developer working on building, designing, and maintaining websites for our clients.
-                My recent project involved creating a website for a local bakery, which can be found <a href="">here</a>.
+                My recent project involved creating a website for a local bakery. This website is fully responsive
+                  and designed with the company's artisan bakery aesthetic in mind.
                 ... 
                 I recently graduated with a BS in Computer Science from University of California, Santa Cruz. 
                 I graduated with Highest Honors in the Major, earned Cum Laude and Dean's Honors, and achieved a 3.86 GPA. 
@@ -31,6 +32,11 @@ function About () {
             </div>
             <div className="col">
               <h3>My Skills</h3>
+              {/*
+                Use possibly different colored bubbles to group skills
+                header: languages and frameworks, tools, etc
+                body: c, c++, python, html, etc
+              */}
             </div>
           </div>
         </div>

@@ -14,12 +14,7 @@ function toggleTheme() {
 // Navbar
 function Navbar() {
     return (
-        // Can do fixed-top in navbar but then it covers part of hero
-        // Can add padding to body so that it is shifted down the height of navbar,
-        // but need to edit css for this
-        // body {
-        //  padding-top: 65px;
-        // }
+        // TODO fix padding here
         <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 {/* Name on the left */}
@@ -43,10 +38,13 @@ function Navbar() {
                             <a className="nav-link" href="#contact">Contact</a>
                         </li>
                         <li className="nav-item">
-                            <button type="button" className="btn" onClick={toggleTheme}>Toggle Light/Dark</button>
+                            {/* Toggle Light/Dark */}
+                            <button type="button" className="btn" onClick={toggleTheme}>
+                                <i class="bi bi-sun-fill"></i>
+                            </button>
                         </li>
                         <li className="nav-item dropdown">
-                            {/* Replace this with a sun/moon icon? */}
+                            {/* !! Replace this with a sun/moon icon */}
                             {/*
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Theme
