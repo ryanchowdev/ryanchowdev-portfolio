@@ -1,3 +1,5 @@
+import React from "react";
+
 /*
   imageUrl - image to display on the card
   galleryUrl - maybe link to a gallery which has screenshots of the project in action
@@ -64,9 +66,9 @@ function Projects () {
         <div className="row">
           {
             projects.map((project) =>(
-              <>
+              <React.Fragment key={project.id}>
                 {/* Card */}
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-md-4">
                   {/* 
                     For devices >= 768px: 2 columns per row at 50% width (size 6) (can also try col-md-4 to have 3 columns per row)
                     For smaller devices, 1 column per row at 100% width (size 12)
@@ -77,17 +79,17 @@ function Projects () {
                   w-50 looks good on desktop but bad on mobile, w-100 might be too big for desktop
                   */}
                   {/* Trigger modal when clicking card */}
-                  <div className="card mx-auto w-100" data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
+                  <div className="card mx-auto" data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     <img src="#" className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
                       <p className="card-text">{project.descriptionShort}</p>
-                      <a href={project.url} key={project.id} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Github</a>
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Github</a>
                     </div>
                   </div>
                 </div>
                 {/* Modal */}
-                <div className="modal fade" id={modalId({project})} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div className="modal fade" id={modalId({project})} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header">
@@ -104,7 +106,7 @@ function Projects () {
                     </div>
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             ))
           }
         </div>

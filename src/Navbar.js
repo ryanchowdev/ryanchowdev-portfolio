@@ -40,7 +40,7 @@ function Navbar() {
                         <li className="nav-item">
                             {/* Toggle Light/Dark */}
                             <button type="button" className="btn" onClick={toggleTheme}>
-                                <i class="bi bi-sun-fill"></i>
+                                <i className="bi bi-sun-fill"></i>
                             </button>
                         </li>
                         <li className="nav-item dropdown">
