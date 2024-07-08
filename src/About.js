@@ -1,3 +1,4 @@
+// TODO Separate into different categories
 const skills = [
   'Python', 'C', 'C++', 'Java', 
   'HTML', 'CSS', 'JavaScript', 
@@ -37,6 +38,42 @@ function About () {
                 header: languages and frameworks, tools, etc
                 body: c, c++, python, html, etc
               */}
+              {/* Languages and Frameworks */}
+              <div className="card mx-auto" style={{width: "18rem"}}>
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                  <h5 className="card-title">Languages and Frameworks</h5>
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">Python</li>
+                  <li className="list-group-item">Java</li>
+                  <li className="list-group-item">C</li>
+                  <li className="list-group-item">C++</li>
+                </ul>
+                <div className="card-body">
+                  <a href="#" className="card-link">Card link</a>
+                  <a href="#" className="card-link">Another link</a>
+                </div>
+              </div>
+              {/* Tools */}
+              <div className="card mx-auto" style={{width: "18rem"}}>
+                <img src="..." className="card-img-top" alt="..."/>
+                <div className="card-body">
+                  <h5 className="card-title">Tools</h5>
+                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">Git</li>
+                  <li className="list-group-item">Unix, Linux</li>
+                  <li className="list-group-item">...</li>
+                  <li className="list-group-item">...</li>
+                </ul>
+                <div className="card-body">
+                  <a href="#" className="card-link">Card link</a>
+                  <a href="#" className="card-link">Another link</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

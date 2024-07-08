@@ -42,12 +42,12 @@ const projects = [
 ];
 
 // Generate Bootstrap target for modal
-function ModalTarget({project}) {
+function modalTarget({project}) {
   return "#modal" + project.id;
 }
 
 // Generate modal id
-function ModalId({project}) {
+function modalId({project}) {
   return "modal" + project.id;
 }
 
@@ -77,7 +77,7 @@ function Projects () {
                   w-50 looks good on desktop but bad on mobile, w-100 might be too big for desktop
                   */}
                   {/* Trigger modal when clicking card */}
-                  <div className="card mx-auto w-100" data-bs-toggle="modal" data-bs-target={ModalTarget({project})}>
+                  <div className="card mx-auto w-100" data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     <img src="#" className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
@@ -87,7 +87,7 @@ function Projects () {
                   </div>
                 </div>
                 {/* Modal */}
-                <div className="modal fade" id={ModalId({project})} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div className="modal fade" id={modalId({project})} tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                   <div className="modal-dialog">
                     <div className="modal-content">
                       <div className="modal-header">
