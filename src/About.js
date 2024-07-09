@@ -1,10 +1,47 @@
-// TODO Separate into different categories
+import React from "react";
+
 const skills = [
-  'Python', 'C', 'C++', 'Java', 
-  'HTML', 'CSS', 'JavaScript', 
-  'React', 'Vue.js', 'Py4web', 'Bulma', 'Bootstrap',
-  'PostgreSQL', 'Assembly (MIPS, RISC-V)',
-  'Linux/Unix', 'Git/GitHub', 'LaTeX', 
+  {
+    id: 0,
+    category: "Programming Languages",
+    items: [
+      "Python",
+      "C",
+      "C++",
+      "Java",
+      "Assembly (MIPS, RISC-V)",
+    ]
+  },
+  {
+    id: 1,
+    category: "Front-End",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Vue.js",
+      "Bootstrap",
+      "Bulma",
+    ]
+  },
+  {
+    id: 2,
+    category: "Back-End",
+    items: [
+      "PostgreSQL",
+      "Py4web",
+    ]
+  },
+  {
+    id: 3,
+    category: "Tools",
+    items: [
+      "Git / GitHub",
+      "Linux / Unix",
+      "LaTeX",
+    ]
+  },
 ];
 
 function About () {
@@ -12,7 +49,9 @@ function About () {
         <div className="container-fluid text-center" id="about">
           <h1>About Me</h1>
           <p>Learn more about my background, education, and professional skills.</p>
+          {/* TODO need to work on responsiveness here */}
           <div className="row align-items-start">
+            {/* Background */}
             <div className="col">
               <h3>My Background</h3>
               <p>
@@ -31,49 +70,31 @@ function About () {
                 I chose to pursue software engineering because ...
               </p>
             </div>
+            {/* Skills */}
             <div className="col">
               <h3>My Skills</h3>
-              {/*
-                Use possibly different colored bubbles to group skills
-                header: languages and frameworks, tools, etc
-                body: c, c++, python, html, etc
-              */}
-              {/* Languages and Frameworks */}
-              <div className="card mx-auto" style={{width: "18rem"}}>
-                <img src="..." className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Languages and Frameworks</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Python</li>
-                  <li className="list-group-item">Java</li>
-                  <li className="list-group-item">C</li>
-                  <li className="list-group-item">C++</li>
-                </ul>
-                <div className="card-body">
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
-              {/* Tools */}
-              <div className="card mx-auto" style={{width: "18rem"}}>
-                <img src="..." className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Tools</h5>
-                  <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Git</li>
-                  <li className="list-group-item">Unix, Linux</li>
-                  <li className="list-group-item">...</li>
-                  <li className="list-group-item">...</li>
-                </ul>
-                <div className="card-body">
-                  <a href="#" className="card-link">Card link</a>
-                  <a href="#" className="card-link">Another link</a>
-                </div>
-              </div>
+              {/* TODO make these different colors? */}
+              {/* Display skills */}
+              {
+                skills.map((skill) =>(
+                  <React.Fragment key={skill.id}>
+                    {/* TODO need to center list elements */}
+                    <div>
+                      <h5>{skill.category}</h5>
+                      <ul className="list-group list-group-horizontal">
+                        {/* Get each skill */}
+                        {
+                          skill.items.map((item, index) =>
+                            <React.Fragment key={index}>
+                              <li className="list-group-item">{item}</li>
+                            </React.Fragment>
+                          )
+                        }
+                      </ul>
+                    </div>
+                  </React.Fragment>
+                ))
+              }
             </div>
           </div>
         </div>

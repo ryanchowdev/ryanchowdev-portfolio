@@ -10,6 +10,10 @@ const projects = [
     id: 0,
     title: "Personal Portfolio",
     url: "https://github.com/ryanchowdev/ryanchowdev-portfolio",
+    technologies: [
+      "React",
+      "Bootstrap"
+    ],
     descriptionShort: "The website you are currently reading",
     descriptionLong: "Personal Portfolio is ...",
   },
@@ -17,6 +21,9 @@ const projects = [
     id: 1,
     title: "Roommate Helper",
     url: "https://github.com/ryanchowdev/RoommateHelper",
+    technologies: [
+      "Python"
+    ],
     descriptionShort: "A chat bot for the Discord messaging app which",
     descriptionLong: "Roommate Helper is ...",
   },
@@ -24,6 +31,11 @@ const projects = [
     id: 2,
     title: "Stock Market Imitation",
     url: "https://github.com/ryanchowdev/Stock-Market-Imitation",
+    technologies: [
+      "Py4web",
+      "Vue.js",
+      "Bulma"
+    ],
     descriptionShort: "A dynamic website which provides a simulated stock market experience",
     descriptionLong: "Stock Market Imitation is ...",
   },
@@ -31,6 +43,11 @@ const projects = [
     id: 3,
     title: "Bread & Thyme Website",
     url: "https://github.com/ryanchowdev/website-bread-and-thyme",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     descriptionShort: "A website designed for a bakery",
     descriptionLong: "Bread & Thyme Website is ...",
   },
@@ -38,6 +55,9 @@ const projects = [
     id: 4,
     title: "UCSC Class Check",
     url: "https://github.com/ryanchowdev/UCSC-ClassCheck",
+    technologies: [
+      "Python"
+    ],
     descriptionShort: "A web scraper which checks the availability of classes at UCSC",
     descriptionLong: "UCSC Class Check is ..."
   },
@@ -70,7 +90,7 @@ function Projects () {
                 {/* Card */}
                 <div className="col-12 col-md-4">
                   {/* 
-                    For devices >= 768px: 2 columns per row at 50% width (size 6) (can also try col-md-4 to have 3 columns per row)
+                    For devices >= 768px: 2 columns per row at 50% width (col-md-6) (can also try col-md-4 to have 3 columns per row)
                     For smaller devices, 1 column per row at 100% width (size 12)
                   */}
                   {/* 
@@ -97,6 +117,14 @@ function Projects () {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
+                        {/* TODO display technologies used, maybe with small boxes next to each other */}
+                        {
+                          project.technologies.map((technology, index) =>
+                            <React.Fragment key={index}>
+                              <p>{technology}</p>
+                            </React.Fragment>
+                          )
+                        }
                         {project.descriptionLong}
                       </div>
                       <div className="modal-footer">
