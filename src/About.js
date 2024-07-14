@@ -23,6 +23,7 @@ const skills = [
       "Vue.js",
       "Bootstrap",
       "Bulma",
+      "Tailwind",
     ]
   },
   {
@@ -78,7 +79,6 @@ function About () {
               {
                 skills.map((skill) =>(
                   <React.Fragment key={skill.id}>
-                    {/* TODO need to center list elements */}
                     <div>
                       <h5>{skill.category}</h5>
                       <ul className="list-group list-group-horizontal">
@@ -86,7 +86,7 @@ function About () {
                         {
                           skill.items.map((item, index) =>
                             <React.Fragment key={index}>
-                              <li className="list-group-item">{item}</li>
+                              <li className="list-group-item flex-fill">{item}</li>
                             </React.Fragment>
                           )
                         }

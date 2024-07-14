@@ -69,7 +69,7 @@ function Navbar() {
                                     <li><a className="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                            <div className="dropdown" data-bs-theme="dark">
+                            {/* <div className="dropdown" data-bs-theme="dark">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dark dropdown
                                 </button>
@@ -81,7 +81,7 @@ function Navbar() {
                                     <li><hr className="dropdown-divider"/></li>
                                     <li><a className="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
-                            </div>
+                            </div> */}
                         </li>
                     </ul>
                 </div>
