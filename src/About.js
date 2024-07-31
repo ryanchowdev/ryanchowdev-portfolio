@@ -23,7 +23,6 @@ const skills = [
       "Vue.js",
       "Bootstrap",
       "Bulma",
-      "Tailwind",
     ]
   },
   {
@@ -41,6 +40,7 @@ const skills = [
       "Git / GitHub",
       "Linux / Unix",
       "LaTeX",
+      "Figma",
     ]
   },
 ];
@@ -58,8 +58,7 @@ function About () {
               <p>
                 I'm currently working as a Software Engineer Intern at ByteNet Solutions.
                 I am a full-stack developer working on building, designing, and maintaining websites for our clients.
-                My recent project involved creating a website for a local bakery. This website is fully responsive
-                  and designed with the company's artisan bakery aesthetic in mind.
+                Every website is fully responsive and carefully crafted based on the client's needs and feedback.
                 ... 
                 I recently graduated with a BS in Computer Science from University of California, Santa Cruz. 
                 I graduated with Highest Honors in the Major, earned Cum Laude and Dean's Honors, and achieved a 3.86 GPA. 
