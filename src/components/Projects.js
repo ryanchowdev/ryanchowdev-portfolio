@@ -78,7 +78,7 @@ function Projects () {
   // upon clicking anywhere on the cards, a modal pops up (?)
   // put github within modal, as well as extended description, technologies used, other information, etc
   return (
-      <div className="container-fluid text-center" id="projects">
+      <div className="container-fluid text-center lh-lg" id="projects">
         <h1>Projects</h1>
         <p>Here are some of the projects I've made in this past.</p>
         <p>Click on any project to learn more about it!</p>
