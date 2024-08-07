@@ -15,7 +15,11 @@ const projects = [
       "Bootstrap"
     ],
     descriptionShort: "The website you are currently reading",
-    descriptionLong: "Personal Portfolio is ...",
+    descriptionLong: "\
+      Personal Portfolio is a fully-responsive static website written with React and Bootstrap.\
+      It showcases my web development skills and provides information about my professional background.\
+      ...\
+      ",
   },
   {
     id: 1,
@@ -25,7 +29,10 @@ const projects = [
       "Python"
     ],
     descriptionShort: "A chat bot for the Discord messaging app which",
-    descriptionLong: "Roommate Helper is ...",
+    descriptionLong: "\
+      Roommate Helper is a chat bot for Discord written in Python.\
+      It was designed as an assistant to help roommates manage various tasks, such as ...\
+      ",
   },
   {
     id: 2,
@@ -37,7 +44,10 @@ const projects = [
       "Bulma"
     ],
     descriptionShort: "A dynamic website which provides a simulated stock market experience",
-    descriptionLong: "Stock Market Imitation is ...",
+    descriptionLong: "\
+      Stock Market Imitation is a dynamic website written with Py4web, Vue.js, and Bulma.\
+      It allows users to ...\
+      ",
   },
   {
     id: 3,
@@ -49,7 +59,10 @@ const projects = [
       "JavaScript"
     ],
     descriptionShort: "A website designed for a bakery",
-    descriptionLong: "Bread & Thyme Website is ...",
+    descriptionLong: "\
+      Bread & Thyme Website is a fully-responsive website written with HTML, CSS, and JavaScript.\
+      ...\
+      ",
   },
   {
     id: 4,
@@ -59,7 +72,12 @@ const projects = [
       "Python"
     ],
     descriptionShort: "A web scraper which checks the availability of classes at UCSC",
-    descriptionLong: "UCSC Class Check is ..."
+    descriptionLong: "\
+      UCSC Class Check is a web scraper written in Python.\
+      It is useful for UCSC students to quickly enroll in popular classes before others.\
+      I personally found it to be extremely helpful when it was time to sign up for classes that immediately filled up.\
+      When someone dropped a class I wanted, I immediately was notified and took the open spot.\
+      "
   },
 ];
 
