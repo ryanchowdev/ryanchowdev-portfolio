@@ -10,7 +10,7 @@ function Hero () {
             <h1 className="display-5 fw-bold">Hi, I'm Ryan Chow</h1>
             <div className="col-lg-6 mx-auto">
               <p className="lead mb-4">
-                Software Engineer Intern at Bytenet Solutions.
+                Software Engineer Intern at ByteNet Solutions.
                 Recently graduated from University of California, Santa Cruz with a B.S. in Computer Science.
               </p>
               <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">

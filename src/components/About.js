@@ -56,24 +56,27 @@ function About () {
             <div className="col">
               <h3>My Background</h3>
               <p>
-                I'm currently working as a Software Engineer Intern at ByteNet Solutions.
+                {/* TODO fix wording */}
+                <br/>
+                I'm currently working as a <b>Software Engineer Intern</b> at ByteNet Solutions.
                 I am a full-stack developer working on building, designing, and maintaining websites for our clients.
                 Each website is fully responsive and carefully crafted based on the client's needs and feedback.
-                ... 
-                I recently graduated with a BS in Computer Science from University of California, Santa Cruz. 
-                I graduated with Highest Honors in the Major, earned Cum Laude and Dean's Honors, and achieved a 3.86 GPA. 
-                During my time at UC Santa Cruz, I created various projects in both team environments and as an individual. 
-                Some of these projects included Roommate Helper, a chat bot to help out roommates living together; 
-                Stock Market Simulator, a dynamic website that provided a simulated stock market experience;
-                and UCSC Class Check, a web scraper to help students enroll in popular classes that filled up quickly. 
-                ... 
-                I chose to pursue software engineering because I enjoy learning and working with new technologies.
-                I like creating projects which can be used to help people in their daily lives ...
+                In my present role, I am primarily focused on the front-end aspect of web development.
+                <br/><br/>
+                I recently graduated with a B.S. in Computer Science from University of California, Santa Cruz with Highest Honors in the Major. 
+                I earned a 3.86 GPA and was recognized for my excellent academic performance by receiving Cum Laude and Dean's Honors.
+                During my time at UC Santa Cruz, I also created various projects in both team environments and as an individual. 
+                You can check out these projects below in the <b>Projects</b> section.  
+                <br/><br/>
+                I enjoy software engineering because I am constantly learning and improving my skills with the latest technology.
+                If you would like to contact me, feel free to reach out in the <b>Contact</b> section below.
+                <br/><br/>
               </p>
             </div>
             {/* Skills */}
             <div className="col">
               <h3>My Skills</h3>
+              <br/>
               {/* TODO make these different colors? */}
               {/* TODO not responsive */}
               {/* Display skills */}
