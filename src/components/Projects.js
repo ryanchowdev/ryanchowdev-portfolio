@@ -15,11 +15,10 @@ const projects = [
       "Bootstrap"
     ],
     descriptionShort: "The website you are currently reading",
-    descriptionLong: "\
-      Personal Portfolio is a fully-responsive static website written with React and Bootstrap.\
-      It showcases my web development skills and provides information about my professional background.\
-      ...\
-      ",
+    descriptionLong: [
+      "Fully-responsive static website written with React and Bootstrap",
+      "Showcases my web development skills and provides information about my professional background",
+    ],
   },
   {
     id: 1,
@@ -29,10 +28,15 @@ const projects = [
       "Python"
     ],
     descriptionShort: "A chat bot for the Discord messaging app which",
-    descriptionLong: "\
-      Roommate Helper is a chat bot for Discord written in Python.\
-      It was designed as an assistant to help roommates manage various tasks, such as ...\
-      ",
+    descriptionLong: [
+      "Chat bot for Discord written with Python",
+      "Led a team of five developers to create this project, using SCRUM practices",
+      "Designed as an assistant to help roommates manage various tasks, such as ...",
+      "Notify users to perform scheduled tasks",
+      "Monetary system for tracking expenses and debt",
+      "Alarm system for household or other important events",
+      "... and more",
+    ],
   },
   {
     id: 2,
@@ -44,10 +48,19 @@ const projects = [
       "Bulma"
     ],
     descriptionShort: "A dynamic website which provides a simulated stock market experience",
-    descriptionLong: "\
-      Stock Market Imitation is a dynamic website written with Py4web, Vue.js, and Bulma.\
-      It allows users to ...\
-      ",
+    descriptionLong: [
+      "Dynamic website written with Py4web, Vue.js, and Bulma",
+      "Collaborated a team of five developers to create this project",
+      "Enables users to practice investing in the stock market without risking real money",
+      "Some features included ...",
+      "Simulated stock market behavior",
+      "Login system",
+      "Stock trading",
+      "Portfolio building",
+      "Charts to track portfolio performance as well as historical stock prices",
+      "Forum to discuss with other users",
+      "... and more",
+    ],
   },
   {
     id: 3,
@@ -56,13 +69,16 @@ const projects = [
     technologies: [
       "HTML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
     ],
     descriptionShort: "A website designed for a bakery",
-    descriptionLong: "\
-      Bread & Thyme Website is a fully-responsive website written with HTML, CSS, and JavaScript.\
-      ...\
-      ",
+    descriptionLong: [
+      "Fully-responsive static website written with HTML, CSS, and JavaScript",
+      "Worked together with a team of three developers",
+      "Focused on design aspect to make website visually appealing and easy to navigate for potential customers",
+      "Used Figma to plan the layout of the site, as well as how we wanted page elements to appear",
+      "Developed website based on client's feedback and vision",
+    ],
   },
   {
     id: 4,
@@ -72,12 +88,13 @@ const projects = [
       "Python"
     ],
     descriptionShort: "A web scraper which checks the availability of classes at UCSC",
-    descriptionLong: "\
-      UCSC Class Check is a web scraper written in Python.\
-      It is useful for UCSC students to quickly enroll in popular classes before others.\
-      I personally found it to be extremely helpful when it was time to sign up for classes that immediately filled up.\
-      When someone dropped a class I wanted, I immediately was notified and took the open spot.\
-      "
+    descriptionLong: [
+      "Web scraper written with Python",
+      "Used Beautiful Soup library for scraping",
+      "Used Tkinter to create easy-to-use GUI",
+      "Useful for UCSC students to quickly enroll in popular classes before others",
+      "Personally used this application to be notified when a space became available in classes that I hoped to join",
+    ],
   },
 ];
 
@@ -136,14 +153,25 @@ function Projects () {
                       </div>
                       <div className="modal-body">
                         {/* TODO display technologies used, maybe with small boxes next to each other */}
-                        {
-                          project.technologies.map((technology, index) =>
-                            <React.Fragment key={index}>
-                              <p>{technology}</p>
-                            </React.Fragment>
-                          )
-                        }
-                        {project.descriptionLong}
+                        <ul>
+                          {
+                            project.technologies.map((technology, index) =>
+                              <React.Fragment key={index}>
+                                <li>{technology}</li>
+                              </React.Fragment>
+                            )
+                          }
+                        </ul>
+                        {/* project description */}
+                        <ul>
+                          {
+                            project.descriptionLong.map((str, index) =>
+                              <React.Fragment key={index}>
+                                <li>{str}</li>
+                              </React.Fragment>
+                            )
+                          }
+                        </ul>
                       </div>
                       <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
