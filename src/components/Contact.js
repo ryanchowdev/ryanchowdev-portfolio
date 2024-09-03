@@ -1,4 +1,4 @@
-// Form submission via web3forms
+// Form submission
 const onSubmit = async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
@@ -31,8 +31,7 @@ function Contact () {
             I will get back to you as soon as possible.<br />
           </p>
           {/* Contact form */}
-          {/* TODO center form, maybe adjust sizing */}
-          <form onSubmit={onSubmit}>
+          <form className="d-flex flex-column align-items-center" onSubmit={onSubmit}>
             <div className="mb-3 w-50">
               <label htmlFor="name" className="form-label">Full Name</label>
               <input type="text" name="name" className="form-control" id="name"/>
