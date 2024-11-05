@@ -163,7 +163,7 @@ function Projects () {
                           }
                         </ul>
                         {/* project description */}
-                        <ul>
+                        <ul className="text-start">
                           {
                             project.descriptionLong.map((str, index) =>
                               <React.Fragment key={index}>
@@ -174,8 +174,7 @@ function Projects () {
                         </ul>
                       </div>
                       <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
+                        <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
