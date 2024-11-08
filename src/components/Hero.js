@@ -5,18 +5,21 @@ function Hero () {
         <div className="container-fluid p-5 text-center lh-lg" id="hero">
 
           {/* CENTERED HERO */}
-          <div className="px-4 py-5 my-5 text-center border-bottom vh-100">
-            <img className="d-block mx-auto mb-4 rounded-circle img-fluid" src={profilePic} alt="Ryan's profile pic" width="300"/>
-            <h1 className="display-5 fw-bold">Hi, I'm Ryan Chow</h1>
-            <div className="col-lg-6 mx-auto">
-              <p className="lead mb-4">
-                Software Engineer Intern at ByteNet Solutions.
-                Recently graduated from University of California, Santa Cruz with a B.S. in Computer Science.
-              </p>
-              <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <a className="btn btn-primary btn-lg px-4 gap-3" href="#about" role="button">About Me</a>
-                {/* <button type="button" className="btn btn-primary btn-lg px-4 gap-3">About Me</button> */}
-                {/* <button type="button" className="btn btn-outline-secondary btn-lg px-4">Secondary</button> */}
+          {/* px-4 py-5 my-5 */}
+          <div className="d-flex align-items-center justify-content-center text-center border-bottom vh-100">
+            <div className="d-inline">
+              <img className="d-block mx-auto mb-4 rounded-circle img-fluid" src={profilePic} alt="Ryan's profile pic" width="300"/>
+              <h1 className="display-5 fw-bold">Hi, I'm Ryan Chow</h1>
+              <div className="col-lg-6 mx-auto">
+                <p className="lead mb-4">
+                  Software Engineer Intern at ByteNet Solutions.
+                  Recently graduated from University of California, Santa Cruz with a B.S. in Computer Science.
+                </p>
+                <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                  <a className="btn btn-primary btn-lg px-4 gap-3" href="#about" role="button">About Me</a>
+                  {/* <button type="button" className="btn btn-primary btn-lg px-4 gap-3">About Me</button> */}
+                  {/* <button type="button" className="btn btn-outline-secondary btn-lg px-4">Secondary</button> */}
+                </div>
               </div>
             </div>
           </div>

@@ -50,10 +50,10 @@ function About () {
         <div className="container-fluid text-center lh-lg" id="about">
           <h1>About Me</h1>
           <p>Learn more about my background, education, and professional skills.</p>
-          {/* TODO need to work on responsiveness here */}
-          <div className="row align-items-start">
+          {/* TODO need to work on responsiveness and overall layout here, particularly for Skills boxes */}
+          <div className="row justify-content-center g-5">
             {/* Background */}
-            <div className="col">
+            <div className="col-lg-5 py-3 px-5">
               <h3>My Background</h3>
               <p>
                 {/* TODO fix wording */}
@@ -73,12 +73,13 @@ function About () {
                 <br/><br/>
               </p>
             </div>
+            {/* <div className="col-lg-1"></div> */}
             {/* Skills */}
-            <div className="col">
+            <div className="col-lg-5 py-3 px-5">
               <h3>My Skills</h3>
               <br/>
               {/* TODO make these different colors? */}
-              {/* TODO not responsive */}
+              {/* TODO not responsive, use md, lg, etc*/}
               {/* Display skills */}
               {
                 skills.map((skill) =>(
