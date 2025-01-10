@@ -123,10 +123,12 @@ function Projects () {
             projects.map((project) =>(
               <React.Fragment key={project.id}>
                 {/* Card */}
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-6 my-3">
                   {/* 
                     For devices >= 768px: 2 columns per row at 50% width (col-md-6) (can also try col-md-4 to have 3 columns per row)
                     For smaller devices, 1 column per row at 100% width (size 12)
+                    TODO Make boxes skinnier (maybe square shaped?)
+                    Increase height of this section if needed?
                   */}
                   {/* 
                   width: "18rem"
