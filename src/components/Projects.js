@@ -14,10 +14,11 @@ const projects = [
       "React",
       "Bootstrap"
     ],
-    descriptionShort: "The website you are currently reading",
+    descriptionShort: "The website you are currently reading, which showcases who I am as a developer.",
     descriptionLong: [
       "Fully-responsive static website written with React and Bootstrap",
-      "Showcases my web development skills and provides information about my professional background",
+      "Showcases my web development skills and provides information about my academic and professional background",
+      "User-friendly interface to retain the reader's attention",
     ],
   },
   {
@@ -27,7 +28,7 @@ const projects = [
     technologies: [
       "Python"
     ],
-    descriptionShort: "A chat bot for the Discord messaging app which",
+    descriptionShort: "A chat bot for the Discord messaging app which helps roommates manage their shared living environment.",
     descriptionLong: [
       "Chat bot for Discord written with Python",
       "Led a team of five developers to create this project, using SCRUM practices",
@@ -71,7 +72,7 @@ const projects = [
       "CSS",
       "JavaScript",
     ],
-    descriptionShort: "A website designed for a bakery",
+    descriptionShort: "A website designed for a bakery", // designed with UI in mind... something like this
     descriptionLong: [
       "Fully-responsive static website written with HTML, CSS, and JavaScript",
       "Worked together with a team of three developers",
@@ -114,6 +115,7 @@ function Projects () {
   // put github within modal, as well as extended description, technologies used, other information, etc
   return (
       <div className="container-fluid text-center lh-lg" id="projects">
+        {/* w-50? causes cards to overlap on smaller window */}
         <h1>Projects</h1>
         <p>Here are some of the projects I've made in this past.</p>
         <p>Click on any project to learn more about it!</p>
@@ -129,14 +131,17 @@ function Projects () {
                     For smaller devices, 1 column per row at 100% width (size 12)
                     TODO Make boxes skinnier (maybe square shaped?)
                     Increase height of this section if needed?
+                    TODO Make contents of every section closer together (skinnier)
+                    try text-lg-center, text-xl-center, text-xxl-center
                   */}
                   {/* 
                   width: "18rem"
+                  style={{width: '18rem'}}
                   w-100 is same as width: "100%"
                   w-50 looks good on desktop but bad on mobile, w-100 might be too big for desktop
                   */}
                   {/* Trigger modal when clicking card */}
-                  <div className="card mx-auto" data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
+                  <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     <img src="#" className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
@@ -155,21 +160,21 @@ function Projects () {
                       </div>
                       <div className="modal-body">
                         {/* TODO display technologies used, maybe with small boxes next to each other */}
-                        <ul>
+                        <ul className="list-group list-group-horizontal justify-content-center">
                           {
                             project.technologies.map((technology, index) =>
                               <React.Fragment key={index}>
-                                <li>{technology}</li>
+                                <li className="list-group-item">{technology}</li>
                               </React.Fragment>
                             )
                           }
                         </ul>
                         {/* project description */}
-                        <ul className="text-start">
+                        <ul className="list-group list-group-flush text-start">
                           {
                             project.descriptionLong.map((str, index) =>
                               <React.Fragment key={index}>
-                                <li>{str}</li>
+                                <li className="list-group-item">{str}</li>
                               </React.Fragment>
                             )
                           }
