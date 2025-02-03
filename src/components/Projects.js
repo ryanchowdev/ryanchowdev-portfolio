@@ -14,7 +14,7 @@ const projects = [
       "React",
       "Bootstrap"
     ],
-    descriptionShort: "The website you are currently reading, which showcases who I am as a developer.",
+    descriptionShort: "The website you are currently reading, which showcases my professional skills and background.",
     descriptionLong: [
       "Fully-responsive static website written with React and Bootstrap",
       "Showcases my web development skills and provides information about my academic and professional background",
@@ -115,11 +115,13 @@ function Projects () {
   // put github within modal, as well as extended description, technologies used, other information, etc
   return (
       <div className="container-fluid text-center lh-lg" id="projects">
-        {/* w-50? causes cards to overlap on smaller window */}
+        {/* TODO limit width here?
+            w-50, w-75 causes cards to overlap on smaller window */}
         <h1>Projects</h1>
         <p>Here are some of the projects I've made in this past.</p>
         <p>Click on any project to learn more about it!</p>
         {/* Display projects, 2 per row */}
+        {/* TODO Possibly change to image on card, then description to the side, only 1 project per row */}
         <div className="row">
           {
             projects.map((project) =>(
@@ -131,6 +133,7 @@ function Projects () {
                     For smaller devices, 1 column per row at 100% width (size 12)
                     TODO Make boxes skinnier (maybe square shaped?)
                     Increase height of this section if needed?
+                    Make size of every box consistent instead of depending on the amount of text?
                     TODO Make contents of every section closer together (skinnier)
                     try text-lg-center, text-xl-center, text-xxl-center
                   */}

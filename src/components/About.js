@@ -78,8 +78,10 @@ function About () {
             <div className="col-lg-5 py-3 px-5">
               <h3>My Skills</h3>
               <br/>
-              {/* TODO make these different colors? */}
-              {/* TODO not responsive, use md, lg, etc*/}
+              {/* TODO 
+                  make these different colors?
+                  not responsive, use md, lg, etc
+                  make boxes wrap onto new line if viewport is too small */}
               {/* Display skills */}
               {
                 skills.map((skill) =>(
