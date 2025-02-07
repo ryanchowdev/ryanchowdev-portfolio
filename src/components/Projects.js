@@ -14,11 +14,11 @@ const projects = [
       "React",
       "Bootstrap"
     ],
-    descriptionShort: "The website you are currently reading, which showcases my professional skills and background.",
+    descriptionShort: "This is my personal portfolio, which you are currently reading. This website showcases my professional skills and background.",
     descriptionLong: [
-      "Fully-responsive static website written with React and Bootstrap",
+      "Fully-responsive static website",
       "Showcases my web development skills and provides information about my academic and professional background",
-      "User-friendly interface to retain the reader's attention",
+      "User-friendly interface for easy navigation",
     ],
   },
   {
@@ -28,9 +28,9 @@ const projects = [
     technologies: [
       "Python"
     ],
-    descriptionShort: "A chat bot for the Discord messaging app which helps roommates manage their shared living environment.",
+    descriptionShort: "Roommate Helper is a chat bot for the Discord messaging app, which helps roommates manage their shared living environment and responsibilities.",
     descriptionLong: [
-      "Chat bot for Discord written with Python",
+      "Chat bot for the Discord messaging app",
       "Led a team of five developers to create this project, using SCRUM practices",
       "Designed as an assistant to help roommates manage various tasks, such as ...",
       "Notify users to perform scheduled tasks",
@@ -48,10 +48,9 @@ const projects = [
       "Vue.js",
       "Bulma"
     ],
-    descriptionShort: "A dynamic website which provides a simulated stock market experience",
+    descriptionShort: "Stock Market Imitation is a dynamic website which provides a simulated stock market experience for users to practice investing without risking real money.",
     descriptionLong: [
-      "Dynamic website written with Py4web, Vue.js, and Bulma",
-      "Collaborated a team of five developers to create this project",
+      "Dynamic website created in collaboration with a team of five developers",
       "Enables users to practice investing in the stock market without risking real money",
       "Some features included ...",
       "Simulated stock market behavior",
@@ -72,11 +71,11 @@ const projects = [
       "CSS",
       "JavaScript",
     ],
-    descriptionShort: "A website designed for a bakery", // designed with UI in mind... something like this
+    descriptionShort: "This static website was created for Bread & Thyme bakery. We wanted to design a beautiful UI so that they could attract potential customers and enhance their online presence(?).",
     descriptionLong: [
-      "Fully-responsive static website written with HTML, CSS, and JavaScript",
-      "Worked together with a team of three developers",
-      "Focused on design aspect to make website visually appealing and easy to navigate for potential customers",
+      "Fully-responsive static website, created with a team of two developers",
+      "Focused on UI/UX design to make website visually appealing and easy to navigate for potential customers",
+      "Excellent learning experience which strengthened my front-end development skills",
       "Used Figma to plan the layout of the site, as well as how we wanted page elements to appear",
       "Developed website based on client's feedback and vision",
     ],
@@ -88,11 +87,10 @@ const projects = [
     technologies: [
       "Python"
     ],
-    descriptionShort: "A web scraper which checks the availability of classes at UCSC",
+    descriptionShort: "UCSC Class Check is a web scraper which checks the availability of classes at UCSC, allowing one to quickly enroll in filled classes when a spot opens up.",
     descriptionLong: [
-      "Web scraper written with Python",
-      "Used Beautiful Soup library for scraping",
-      "Used Tkinter to create easy-to-use GUI",
+      "Web scraper built with Python's Beautiful Soup library",
+      "Used Tkinter library to create an easy-to-use GUI",
       "Useful for UCSC students to quickly enroll in popular classes before others",
       "Personally used this application to be notified when a space became available in classes that I hoped to join",
     ],
