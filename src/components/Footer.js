@@ -11,15 +11,15 @@ function Footer () {
                     <div className="col">
                         <h3>Social</h3>
                         {/* TODO work in progress */}
-                        <ul className="nav">
+                        <ul className="nav justify-content-center">
                             <li className="nav-item">
-                                <i className="bi bi-github"></i>
+                                <a href="#" className="btn btn-large btn-secondary"><i className="bi bi-github"></i></a>
                             </li>
                             <li className="nav-item">
                                 <a href="#" className="btn btn-large btn-primary"><i className="bi bi-linkedin"></i></a>
                             </li>
                             <li className="nav-item">
-                                <a href="#" className="nav-link"><i className="bi bi-envelope-fill"></i></a>
+                                <a href="#" className="btn btn-large btn-info"><i className="bi bi-envelope-fill"></i></a>
                             </li>
                         </ul>
                     </div>

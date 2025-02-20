@@ -4,6 +4,9 @@ import React from "react";
   imageUrl - image to display on the card
   galleryUrl - maybe link to a gallery which has screenshots of the project in action
   siteUrl - maybe link to the actual site if it's going to be hosted
+
+  TODO
+  maybe shorten descriptionShort to just one line and have the picture take up most of the space?
 */
 const projects = [
   {
@@ -19,6 +22,7 @@ const projects = [
       "Fully-responsive static website",
       "Showcases my web development skills and provides information about my academic and professional background",
       "User-friendly interface for easy navigation",
+      "Toggle between light and dark mode for improved readability",
     ],
   },
   {
@@ -111,8 +115,10 @@ function Projects () {
   // just have 2 cards per row with image and description for project
   // upon clicking anywhere on the cards, a modal pops up (?)
   // put github within modal, as well as extended description, technologies used, other information, etc
+  // TODO removed container-fluid for container - keep?
+  // TODO watch out for overlapping sections - use inspect element
   return (
-      <div className="container-fluid text-center lh-lg" id="projects">
+      <div className="container text-center lh-lg" id="projects">
         {/* TODO limit width here?
             w-50, w-75 causes cards to overlap on smaller window */}
         <h1>Projects</h1>

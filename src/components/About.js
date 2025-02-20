@@ -47,10 +47,12 @@ const skills = [
 
 function About () {
     return (
-        <div className="container-fluid text-center lh-lg" id="about">
+        <div className="container text-center lh-lg" id="about">
           <h1>About Me</h1>
           <p>Learn more about my background, education, and professional skills.</p>
-          {/* TODO need to work on responsiveness and overall layout here, particularly for Skills boxes */}
+          {/* TODO need to work on responsiveness and overall layout here, particularly for Skills boxes 
+          Error: container-fluid causes a horizontal scroll wheel to appear - too much padding or something on the sides
+          Make this section taller */}
           <div className="row justify-content-center g-5">
             {/* Background */}
             <div className="col-lg-5 py-3 px-5">
@@ -81,7 +83,8 @@ function About () {
               {/* TODO 
                   make these different colors?
                   not responsive, use md, lg, etc
-                  make boxes wrap onto new line if viewport is too small */}
+                  make boxes wrap onto new line if viewport is too small 
+                  changes to button group (without links)? */}
               {/* Display skills */}
               {
                 skills.map((skill) =>(
