@@ -1,8 +1,8 @@
 // Toggle between light and dark themes
 function toggleTheme() {
-  // Log which theme is active
-  console.log(document.documentElement.getAttribute('data-bs-theme'));
-  if (document.documentElement.getAttribute('data-bs-theme') === 'dark') {
+  let currTheme = document.documentElement.getAttribute('data-bs-theme');
+  // Switch to opposite of current theme
+  if (currTheme === 'dark') {
     document.documentElement.setAttribute('data-bs-theme', 'light');
   }
   else {
@@ -14,7 +14,7 @@ function toggleTheme() {
 // Navbar
 function Navbar() {
     return (
-        // TODO fix padding here
+        // TODO look into padding issues?
         <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 {/* Name on the left */}
@@ -22,8 +22,7 @@ function Navbar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                {/* Other items on the right 
-                TODO add AUTO button*/}
+                {/* Other items on the right */}
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
@@ -38,52 +37,42 @@ function Navbar() {
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact</a>
                         </li>
+                        {/* Divider */}
+                        <li className="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                            <div className="vr d-none d-lg-flex h-100 mx-lg-2"></div>
+                            <hr className="d-lg-none my-2"></hr>
+                        </li>
+                        {/* Button to toggle Light/Dark mode */}
                         <li className="nav-item">
-                            {/* Toggle Light/Dark */}
                             <button type="button" className="btn" onClick={toggleTheme}>
                                 <i className="bi bi-sun-fill"></i>
                             </button>
                         </li>
-                        <li className="nav-item dropdown">
-                            {/* !! Replace this with a sun/moon icon */}
-                            {/*
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Theme
-                            </a>
-                            <ul className="dropdown-menu dropdown-menu-end">
-                                <li><a className="dropdown-item" href="#">Light (default)</a></li>
-                                <li><a className="dropdown-item" href="#">Dark</a></li>
-                                <li><hr className="dropdown-divider"/></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                            */}
-                            <div className="dropdown" data-bs-theme="light">
+                        {/* Possibly change to dropdown menu for light/dark/auto? */}
+                        {/* <li className="nav-item dropdown">
+                            <div className="dropdown" data-bs-theme="auto">
                                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Default dropdown
+                                    Color Mode
                                 </button>
                                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonLight">
-                                    <li><a className="dropdown-item active" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr className="dropdown-divider"/></li>
-                                    <li><a className="dropdown-item" href="#">Separated link</a></li>
+                                    <li>
+                                        <button type="button" className="dropdown-item" data-bs-theme-value="light" aria-pressed="false">
+                                            Light
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" className="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
+                                            Dark
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" className="dropdown-item" data-bs-theme-value="auto" aria-pressed="true">
+                                            Auto
+                                        </button>
+                                    </li>
                                 </ul>
                             </div>
-                            {/* <div className="dropdown" data-bs-theme="dark">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dark dropdown
-                                </button>
-                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonDark">
-                                    <li><a className="dropdown-item active" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr className="dropdown-divider"/></li>
-                                    <li><a className="dropdown-item" href="#">Separated link</a></li>
-                                </ul>
-                            </div> */}
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
