@@ -1,7 +1,8 @@
 import React from "react";
+import ucscScraperCover from "../assets/ucsc-scraper-cover.png";
 
 /*
-  imageUrl - image to display on the card
+  images - images to use on the project card. images[0] will contain the cover image
   galleryUrl - maybe link to a gallery which has screenshots of the project in action
   siteUrl - maybe link to the actual site if it's going to be hosted
 
@@ -24,6 +25,8 @@ const projects = [
       "User-friendly interface for easy navigation",
       "Toggle between light and dark mode for improved readability",
     ],
+    images: [
+    ],
   },
   {
     id: 1,
@@ -41,6 +44,8 @@ const projects = [
       "Monetary system for tracking expenses and debt",
       "Alarm system for household or other important events",
       "... and more",
+    ],
+    images: [
     ],
   },
   {
@@ -65,6 +70,8 @@ const projects = [
       "Forum to discuss with other users",
       "... and more",
     ],
+    images: [
+    ],
   },
   {
     id: 3,
@@ -83,6 +90,8 @@ const projects = [
       "Used Figma to plan the layout of the site, as well as how we wanted page elements to appear",
       "Developed website based on client's feedback and vision",
     ],
+    images: [
+    ],
   },
   {
     id: 4,
@@ -97,6 +106,9 @@ const projects = [
       "Used Tkinter library to create an easy-to-use GUI",
       "Useful for UCSC students to quickly enroll in popular classes before others",
       "Personally used this application to be notified when a space became available in classes that I hoped to join",
+    ],
+    images: [
+      ucscScraperCover,
     ],
   },
 ];
@@ -117,8 +129,9 @@ function Projects () {
   // put github within modal, as well as extended description, technologies used, other information, etc
   // TODO removed container-fluid for container - keep?
   // TODO watch out for overlapping sections - use inspect element
+  // TODO put some more clear indication that you can click on the boxes - maybe put animation on box when you hover over it
   return (
-      <div className="container text-center lh-lg" id="projects">
+      <div className="container text-center lh-lg border-bottom" id="projects">
         {/* TODO limit width here?
             w-50, w-75 causes cards to overlap on smaller window */}
         <h1>Projects</h1>
@@ -149,11 +162,12 @@ function Projects () {
                   */}
                   {/* Trigger modal when clicking card */}
                   <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
-                    <img src="#" className="card-img-top" alt={project.title} />
+                    {/* TODO put image here */}
+                    <img src={project.images[0]} className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
                       <p className="card-text">{project.descriptionShort}</p>
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Github</a>
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><i className="bi bi-github"></i> Github</a>
                     </div>
                   </div>
                 </div>

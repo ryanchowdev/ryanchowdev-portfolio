@@ -47,7 +47,11 @@ const skills = [
 
 function About () {
     return (
-        <div className="container text-center lh-lg" id="about">
+        <div className="container text-center lh-lg border-bottom" id="about">
+          {/* TODO Should border-bottom be longer like in hero? Also occurs in other sections
+          removed container-fluid for container 
+          inconsistent position of border when jumping to section - between hero and about (below line), versus about and projects (above line)
+          maybe put p-5 in each section? */}
           <h1>About Me</h1>
           <p>Learn more about my background, education, and professional skills.</p>
           {/* TODO need to work on responsiveness and overall layout here, particularly for Skills boxes 
@@ -81,6 +85,7 @@ function About () {
               <h3>My Skills</h3>
               <br/>
               {/* TODO 
+                  put more space/padding between sections
                   make these different colors?
                   not responsive, use md, lg, etc
                   make boxes wrap onto new line if viewport is too small 

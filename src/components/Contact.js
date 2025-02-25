@@ -24,7 +24,7 @@ const onSubmit = async (event) => {
 
 function Contact () {
     return (
-        <div className="container text-center lh-lg" id="contact">
+        <div className="container text-center lh-lg border-bottom" id="contact">
           {/* TODO Make this a card? 
           Removed container-fluid for container*/}
           <h1>Contact</h1>
