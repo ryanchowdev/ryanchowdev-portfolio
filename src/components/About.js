@@ -89,7 +89,8 @@ function About () {
                   make these different colors?
                   not responsive, use md, lg, etc
                   make boxes wrap onto new line if viewport is too small 
-                  changes to button group (without links)? */}
+                  changes to button group (without links)? 
+                  maybe add some images? */}
               {/* Display skills */}
               {
                 skills.map((skill) =>(

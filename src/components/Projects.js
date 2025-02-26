@@ -1,8 +1,13 @@
 import React from "react";
-import ucscScraperCover from "../assets/ucsc-scraper-cover.png";
+import portfolioCover from "../assets/cover-portfolio.jpeg"; // TODO may need to retake photo if we change site home screen
+import roommateHelperCover from "../assets/cover-roommate.jpg";
+import stockMarketCover from "../assets/cover-stock-market.jpg";
+import breadCover from "../assets/cover-bread.jpeg";
+import ucscScraperCover from "../assets/cover-ucsc-scraper.jpg";
 
 /*
-  images - images to use on the project card. images[0] will contain the cover image
+  coverImg - image which will be displayed on the front of the card
+  images - other images related to the project?
   galleryUrl - maybe link to a gallery which has screenshots of the project in action
   siteUrl - maybe link to the actual site if it's going to be hosted
 
@@ -25,8 +30,7 @@ const projects = [
       "User-friendly interface for easy navigation",
       "Toggle between light and dark mode for improved readability",
     ],
-    images: [
-    ],
+    coverImg: portfolioCover,
   },
   {
     id: 1,
@@ -45,8 +49,7 @@ const projects = [
       "Alarm system for household or other important events",
       "... and more",
     ],
-    images: [
-    ],
+    coverImg: roommateHelperCover,
   },
   {
     id: 2,
@@ -70,8 +73,7 @@ const projects = [
       "Forum to discuss with other users",
       "... and more",
     ],
-    images: [
-    ],
+    coverImg: stockMarketCover,
   },
   {
     id: 3,
@@ -90,8 +92,7 @@ const projects = [
       "Used Figma to plan the layout of the site, as well as how we wanted page elements to appear",
       "Developed website based on client's feedback and vision",
     ],
-    images: [
-    ],
+    coverImg: breadCover,
   },
   {
     id: 4,
@@ -107,9 +108,7 @@ const projects = [
       "Useful for UCSC students to quickly enroll in popular classes before others",
       "Personally used this application to be notified when a space became available in classes that I hoped to join",
     ],
-    images: [
-      ucscScraperCover,
-    ],
+    coverImg: ucscScraperCover,
   },
 ];
 
@@ -162,8 +161,10 @@ function Projects () {
                   */}
                   {/* Trigger modal when clicking card */}
                   <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
-                    {/* TODO put image here */}
-                    <img src={project.images[0]} className="card-img-top" alt={project.title} />
+                    {/* Project cover image */}
+                    {/* TODO Should we enforce a specific size / aspect ratio for this image? 
+                    Maybe enlarge image when clicked so user can see in better detail? */}
+                    <img loading="lazy" src={project.coverImg} className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
                       <p className="card-text">{project.descriptionShort}</p>
@@ -190,6 +191,7 @@ function Projects () {
                             )
                           }
                         </ul>
+                        {/* TODO maybe put some more images here? */}
                         {/* project description */}
                         <ul className="list-group list-group-flush text-start">
                           {
