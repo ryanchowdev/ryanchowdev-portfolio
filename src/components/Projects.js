@@ -28,7 +28,7 @@ const projects = [
       "Fully-responsive static website",
       "Showcases my web development skills and provides information about my academic and professional background",
       "User-friendly interface for easy navigation",
-      "Toggle between light and dark mode for improved readability",
+      "Automatic light/dark mode for improved readability, with the option to toggle between modes",
     ],
     coverImg: portfolioCover,
   },
@@ -84,7 +84,7 @@ const projects = [
       "CSS",
       "JavaScript",
     ],
-    descriptionShort: "This static website was created for Bread & Thyme bakery. We wanted to design a beautiful UI so that they could attract potential customers and enhance their online presence(?).",
+    descriptionShort: "This static website was created for Bread & Thyme bakery to enhance their online presence and attract new customers.",
     descriptionLong: [
       "Fully-responsive static website, created with a team of two developers",
       "Focused on UI/UX design to make website visually appealing and easy to navigate for potential customers",
@@ -130,14 +130,13 @@ function Projects () {
   // TODO watch out for overlapping sections - use inspect element
   // TODO put some more clear indication that you can click on the boxes - maybe put animation on box when you hover over it
   return (
-      <div className="container text-center lh-lg border-bottom" id="projects">
-        {/* TODO limit width here?
-            w-50, w-75 causes cards to overlap on smaller window */}
+      <div className="container p-5 text-center lh-lg border-bottom" id="projects">
         <h1>Projects</h1>
         <p>Here are some of the projects I've made in this past.</p>
         <p>Click on any project to learn more about it!</p>
         {/* Display projects, 2 per row */}
-        {/* TODO Possibly change to image on card, then description to the side, only 1 project per row */}
+        {/* TODO Possibly change to image on card, then description to the side, only 1 project per row 
+        Maybe make cards bigger? */}
         <div className="row">
           {
             projects.map((project) =>(
@@ -147,11 +146,8 @@ function Projects () {
                   {/* 
                     For devices >= 768px: 2 columns per row at 50% width (col-md-6) (can also try col-md-4 to have 3 columns per row)
                     For smaller devices, 1 column per row at 100% width (size 12)
-                    TODO Make boxes skinnier (maybe square shaped?)
-                    Increase height of this section if needed?
+                    TODO Increase height of this section if needed?
                     Make size of every box consistent instead of depending on the amount of text?
-                    TODO Make contents of every section closer together (skinnier)
-                    try text-lg-center, text-xl-center, text-xxl-center
                   */}
                   {/* 
                   width: "18rem"
@@ -162,12 +158,12 @@ function Projects () {
                   {/* Trigger modal when clicking card */}
                   <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     {/* Project cover image */}
-                    {/* TODO Should we enforce a specific size / aspect ratio for this image? 
-                    Maybe enlarge image when clicked so user can see in better detail? */}
+                    {/* TODO Maybe enlarge image when clicked so user can see in better detail? */}
                     <img loading="lazy" src={project.coverImg} className="card-img-top" alt={project.title} />
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
                       <p className="card-text">{project.descriptionShort}</p>
+                      {/* TODO clicking github link also opens modal */}
                       <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><i className="bi bi-github"></i> Github</a>
                     </div>
                   </div>
@@ -181,6 +177,9 @@ function Projects () {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
+                        {/* TODO maybe image carousel here if we want to add more images later? */}
+                        {/* TODO put large image here */}
+                        <img loading="lazy" src={project.coverImg} className="w-100" alt={project.title} />
                         {/* TODO display technologies used, maybe with small boxes next to each other */}
                         <ul className="list-group list-group-horizontal justify-content-center">
                           {
@@ -191,7 +190,6 @@ function Projects () {
                             )
                           }
                         </ul>
-                        {/* TODO maybe put some more images here? */}
                         {/* project description */}
                         <ul className="list-group list-group-flush text-start">
                           {

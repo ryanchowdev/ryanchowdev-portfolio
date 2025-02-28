@@ -14,21 +14,21 @@ function toggleTheme() {
 // Navbar
 function Navbar() {
     return (
-        // TODO look into padding issues?
+        // TODO navbar is overlapping the sections, can we offset when we click navbar section to go up more?
         <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 {/* Name on the left */}
                 <a className="navbar-brand" href="#">Ryan Chow</a>
+                {/* Button for mobile controls */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                {/* Other items on the right 
-                TODO change to highlight which section is active,
-                and change as you scroll down the page to a new section */}
+                {/* Page sections on the right */}
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        {/* Sections */}
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <a className="nav-link" aria-current="page" href="#home">Home</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#about">About</a>
@@ -50,31 +50,6 @@ function Navbar() {
                                 <i className="bi bi-sun-fill"></i>
                             </button>
                         </li>
-                        {/* Possibly change to dropdown menu for light/dark/auto? */}
-                        {/* <li className="nav-item dropdown">
-                            <div className="dropdown" data-bs-theme="auto">
-                                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Color Mode
-                                </button>
-                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonLight">
-                                    <li>
-                                        <button type="button" className="dropdown-item" data-bs-theme-value="light" aria-pressed="false">
-                                            Light
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" className="dropdown-item" data-bs-theme-value="dark" aria-pressed="false">
-                                            Dark
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type="button" className="dropdown-item" data-bs-theme-value="auto" aria-pressed="true">
-                                            Auto
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> */}
                     </ul>
                 </div>
             </div>

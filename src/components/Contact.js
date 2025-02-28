@@ -3,11 +3,13 @@ const onSubmit = async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
 
-  formData.append("access_key", "72af4997-1628-4924-82ab-298afa0a9a3f"); // Public key for form
+  // Use public key for form
+  formData.append("access_key", "72af4997-1628-4924-82ab-298afa0a9a3f");
 
   const object = Object.fromEntries(formData);
   const json = JSON.stringify(object);
 
+  // POST contents
   const res = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: {
@@ -24,9 +26,10 @@ const onSubmit = async (event) => {
 
 function Contact () {
     return (
-        <div className="container text-center lh-lg border-bottom" id="contact">
+        <div className="container p-5 text-center lh-lg border-bottom" id="contact">
           {/* TODO Make this a card? 
-          Removed container-fluid for container*/}
+          Removed container-fluid for container
+          added p-5 for additional padding between sections */}
           <h1>Contact</h1>
           <p>
             Feel free to contact me with any questions or concerns.<br />
@@ -46,7 +49,9 @@ function Contact () {
               <label htmlFor="message" className="form-label">Message</label>
               <textarea className="form-control" name="message" id="message" rows="3"></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            {/* TODO Move this button down, maybe add arrow symbol or check mark
+            Should we have some animation after submitting the form? */}
+            <button type="submit" className="btn btn-success mt-4 py-2 px-3">Submit</button>
           </form>
           <br />
         </div>

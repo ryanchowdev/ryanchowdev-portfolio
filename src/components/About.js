@@ -47,14 +47,14 @@ const skills = [
 
 function About () {
     return (
-        <div className="container text-center lh-lg border-bottom" id="about">
+        <div className="container p-5 text-center lh-lg border-bottom" id="about">
           {/* TODO Should border-bottom be longer like in hero? Also occurs in other sections
           removed container-fluid for container 
           inconsistent position of border when jumping to section - between hero and about (below line), versus about and projects (above line)
           maybe put p-5 in each section? */}
           <h1>About Me</h1>
           <p>Learn more about my background, education, and professional skills.</p>
-          {/* TODO need to work on responsiveness and overall layout here, particularly for Skills boxes 
+          {/* TODO need to work on responsiveness and overall layout here
           Error: container-fluid causes a horizontal scroll wheel to appear - too much padding or something on the sides
           Make this section taller */}
           <div className="row justify-content-center g-5">
@@ -62,7 +62,8 @@ function About () {
             <div className="col-lg-5 py-3 px-5">
               <h3>My Background</h3>
               <p>
-                {/* TODO fix wording */}
+                {/* TODO fix wording
+                maybe add something about being born and raised in SF Bay Area, etc */}
                 <br/>
                 I'm currently working as a <b>Software Engineer Intern</b> at ByteNet Solutions.
                 I am a full-stack developer working on building, designing, and maintaining websites for our clients.
@@ -79,7 +80,6 @@ function About () {
                 <br/><br/>
               </p>
             </div>
-            {/* <div className="col-lg-1"></div> */}
             {/* Skills */}
             <div className="col-lg-5 py-3 px-5">
               <h3>My Skills</h3>
@@ -87,9 +87,6 @@ function About () {
               {/* TODO 
                   put more space/padding between sections
                   make these different colors?
-                  not responsive, use md, lg, etc
-                  make boxes wrap onto new line if viewport is too small 
-                  changes to button group (without links)? 
                   maybe add some images? */}
               {/* Display skills */}
               {
@@ -97,16 +94,21 @@ function About () {
                   <React.Fragment key={skill.id}>
                     <div>
                       <h5>{skill.category}</h5>
-                      <ul className="list-group list-group-horizontal">
-                        {/* Get each skill */}
-                        {
-                          skill.items.map((item, index) =>
-                            <React.Fragment key={index}>
-                              <li className="list-group-item flex-fill">{item}</li>
-                            </React.Fragment>
-                          )
-                        }
-                      </ul>
+                      {/* TODO pick a secondary color scheme to use throughout the page -
+                          can be blue, green, purple, etc 
+                          change all buttons to this color 
+                          make buttons appear like boxes, cannot interact with them */}
+                      {
+                        skill.items.map((item, index) =>
+                          <div className="d-inline-flex p-1">
+                            <button type="button" className="btn btn-outline-primary" style={{pointerEvents: "none"}}>
+                              <React.Fragment key={index}>
+                                {item}
+                              </React.Fragment>
+                            </button>
+                          </div>
+                        )
+                      }
                     </div>
                   </React.Fragment>
                 ))

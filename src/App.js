@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <main>
+      {/* Detect user's location on page with scrollspy */}
+      <main data-bs-spy="scroll" data-bs-target="#navbarSupportedContent">
         <Hero />
         <About />
         <Projects />

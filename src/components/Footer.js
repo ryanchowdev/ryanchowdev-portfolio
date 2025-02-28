@@ -1,7 +1,7 @@
 function Footer () {
     return (
         <footer>
-            {/* TODO put some divider here 
+            {/* TODO edit description
             removed container-fluid for container */}
             <div className="container p-5 text-center lh-lg" id="footer">
                 <div className="row">
@@ -12,7 +12,7 @@ function Footer () {
                     <div className="col">
                         <h3>Social</h3>
                         {/* TODO work in progress */}
-                        <ul className="nav justify-content-center">
+                        <ul className="nav justify-content-center gap-2">
                             <li className="nav-item">
                                 <a href="https://github.com/ryanchowdev" target="_blank" rel="noopener noreferrer" className="btn btn-large btn-secondary"><i className="bi bi-github"></i></a>
                             </li>
@@ -20,7 +20,7 @@ function Footer () {
                                 <a href="https://www.linkedin.com/in/ryanchowdev/" target="_blank" rel="noopener noreferrer" className="btn btn-large btn-primary"><i className="bi bi-linkedin"></i></a>
                             </li>
                             <li className="nav-item">
-                                <a href="mailto:ryanchowdev@gmail.com" className="btn btn-large btn-info"><i className="bi bi-envelope-fill"></i></a>
+                                <a href="mailto:ryanchowdev@gmail.com" className="btn btn-large btn-danger"><i className="bi bi-envelope-fill"></i></a>
                             </li>
                         </ul>
                     </div>
