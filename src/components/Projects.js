@@ -168,9 +168,9 @@ function Projects () {
                     </div>
                   </div>
                 </div>
-                {/* Modal */}
+                {/* TODO Modal - use xl, try lg? */}
                 <div className="modal fade" id={modalId({project})} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                  <div className="modal-dialog">
+                  <div className="modal-dialog modal-xl">
                     <div className="modal-content">
                       <div className="modal-header">
                         <h1 className="modal-title fs-5" id="modalLabel">{project.title}</h1>
@@ -181,7 +181,7 @@ function Projects () {
                         {/* TODO put large image here */}
                         <img loading="lazy" src={project.coverImg} className="w-100" alt={project.title} />
                         {/* TODO display technologies used, maybe with small boxes next to each other */}
-                        <ul className="list-group list-group-horizontal justify-content-center">
+                        {/* <ul className="list-group list-group-horizontal justify-content-center mt-4 mb-1">
                           {
                             project.technologies.map((technology, index) =>
                               <React.Fragment key={index}>
@@ -189,7 +189,19 @@ function Projects () {
                               </React.Fragment>
                             )
                           }
-                        </ul>
+                        </ul> */}
+                        {/* TODO use boxes instead of horizontal list? */}
+                        {
+                          project.technologies.map((technology, index) =>
+                            <div className="d-inline-flex mt-4 mb-1 p-1">
+                              <button type="button" className="btn btn-outline-primary" style={{pointerEvents: "none"}}>
+                                <React.Fragment key={index}>
+                                  {technology}
+                                </React.Fragment>
+                              </button>
+                            </div>
+                          )
+                        }
                         {/* project description */}
                         <ul className="list-group list-group-flush text-start">
                           {
