@@ -6,13 +6,20 @@ import breadCover from "../assets/cover-bread.jpeg";
 import ucscScraperCover from "../assets/cover-ucsc-scraper.jpg";
 
 /*
-  coverImg - image which will be displayed on the front of the card
-  images - other images related to the project?
-  galleryUrl - maybe link to a gallery which has screenshots of the project in action
-  siteUrl - maybe link to the actual site if it's going to be hosted
+  Detailed information about my personal projects.
+
+  id - Used to uniquely identify projects
+  title - Name of project
+  url - Link to GitHub repository
+  technologies - Technologies used to create the project
+  descriptionShort - Brief description displayed on the outer card
+  descriptionLong - Longer description shown within the modal, presented as a list of information
+  coverImg - image which will be displayed on the front of the card as well as inside the modal
 
   TODO
+  images - other images related to the project?
   maybe shorten descriptionShort to just one line and have the picture take up most of the space?
+  maybe put descriptionLong as just a paragraph so it's easier to write about and list the features?
 */
 const projects = [
   {
@@ -21,7 +28,7 @@ const projects = [
     url: "https://github.com/ryanchowdev/ryanchowdev-portfolio",
     technologies: [
       "React",
-      "Bootstrap"
+      "Bootstrap",
     ],
     descriptionShort: "This is my personal portfolio, which you are currently reading. This website showcases my professional skills and background.",
     descriptionLong: [
@@ -37,17 +44,20 @@ const projects = [
     title: "Roommate Helper",
     url: "https://github.com/ryanchowdev/RoommateHelper",
     technologies: [
-      "Python"
+      "Python",
+      "SQLite",
     ],
-    descriptionShort: "Roommate Helper is a chat bot for the Discord messaging app, which helps roommates manage their shared living environment and responsibilities.",
+    descriptionShort: "Roommate Helper is a chat bot which helps roommates manage their shared living environment and responsibilities.",
     descriptionLong: [
       "Chat bot for the Discord messaging app",
       "Led a team of five developers to create this project, using SCRUM practices",
-      "Designed as an assistant to help roommates manage various tasks, such as ...",
+      "Designed as an assistant to help roommates manage various household tasks",
+      "Some features include:",
       "Notify users to perform scheduled tasks",
       "Monetary system for tracking expenses and debt",
       "Alarm system for household or other important events",
-      "... and more",
+      "...",
+      "and more.",
     ],
     coverImg: roommateHelperCover,
   },
@@ -58,17 +68,17 @@ const projects = [
     technologies: [
       "Py4web",
       "Vue.js",
-      "Bulma"
+      "Bulma",
     ],
     descriptionShort: "Stock Market Imitation is a dynamic website which provides a simulated stock market experience for users to practice investing without risking real money.",
     descriptionLong: [
       "Dynamic website created in collaboration with a team of five developers",
       "Enables users to practice investing in the stock market without risking real money",
-      "Some features included ...",
+      "Some features include:",
       "Simulated stock market behavior",
       "Login system",
-      "Stock trading",
-      "Portfolio building",
+      "Buy and sell stocks",
+      "Portfolio building", // TODO reword, track your performance in the portfolio
       "Charts to track portfolio performance as well as historical stock prices",
       "Forum to discuss with other users",
       "... and more",
@@ -89,7 +99,7 @@ const projects = [
       "Fully-responsive static website, created with a team of two developers",
       "Focused on UI/UX design to make website visually appealing and easy to navigate for potential customers",
       "Excellent learning experience which strengthened my front-end development skills",
-      "Used Figma to plan the layout of the site, as well as how we wanted page elements to appear",
+      "Used Figma to plan the layout and design of the site for both mobile and desktop users",
       "Developed website based on client's feedback and vision",
     ],
     coverImg: breadCover,
@@ -99,7 +109,7 @@ const projects = [
     title: "UCSC Class Check",
     url: "https://github.com/ryanchowdev/UCSC-ClassCheck",
     technologies: [
-      "Python"
+      "Python",
     ],
     descriptionShort: "UCSC Class Check is a web scraper which checks the availability of classes at UCSC, allowing one to quickly enroll in filled classes when a spot opens up.",
     descriptionLong: [
@@ -127,6 +137,7 @@ function Projects () {
   // upon clicking anywhere on the cards, a modal pops up (?)
   // put github within modal, as well as extended description, technologies used, other information, etc
   // TODO removed container-fluid for container - keep?
+  // we want the content contained within this area, but maybe extend the border line to be fluid/fill the entire width of the viewport?
   // TODO watch out for overlapping sections - use inspect element
   // TODO put some more clear indication that you can click on the boxes - maybe put animation on box when you hover over it
   return (
@@ -149,12 +160,6 @@ function Projects () {
                     TODO Increase height of this section if needed?
                     Make size of every box consistent instead of depending on the amount of text?
                   */}
-                  {/* 
-                  width: "18rem"
-                  style={{width: '18rem'}}
-                  w-100 is same as width: "100%"
-                  w-50 looks good on desktop but bad on mobile, w-100 might be too big for desktop
-                  */}
                   {/* Trigger modal when clicking card */}
                   <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     {/* Project cover image */}
@@ -163,12 +168,13 @@ function Projects () {
                     <div className="card-body">
                       <h5 className="card-title">{project.title}</h5>
                       <p className="card-text">{project.descriptionShort}</p>
-                      {/* TODO clicking github link also opens modal */}
+                      {/* TODO clicking github link also opens modal
+                      Change behavior: Remove this button outside -- instead put github link solely within modal, and make it more noticeable that cards can be clicked */}
                       <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><i className="bi bi-github"></i> Github</a>
                     </div>
                   </div>
                 </div>
-                {/* TODO Modal - use xl, try lg? */}
+                {/* TODO Modal - use xl, need to test on smaller screens, can change to lg */}
                 <div className="modal fade" id={modalId({project})} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                   <div className="modal-dialog modal-xl">
                     <div className="modal-content">
@@ -178,19 +184,8 @@ function Projects () {
                       </div>
                       <div className="modal-body">
                         {/* TODO maybe image carousel here if we want to add more images later? */}
-                        {/* TODO put large image here */}
                         <img loading="lazy" src={project.coverImg} className="w-100" alt={project.title} />
-                        {/* TODO display technologies used, maybe with small boxes next to each other */}
-                        {/* <ul className="list-group list-group-horizontal justify-content-center mt-4 mb-1">
-                          {
-                            project.technologies.map((technology, index) =>
-                              <React.Fragment key={index}>
-                                <li className="list-group-item">{technology}</li>
-                              </React.Fragment>
-                            )
-                          }
-                        </ul> */}
-                        {/* TODO use boxes instead of horizontal list? */}
+                        {/* Display the project's technologies in boxes */}
                         {
                           project.technologies.map((technology, index) =>
                             <div className="d-inline-flex mt-4 mb-1 p-1">
@@ -202,7 +197,7 @@ function Projects () {
                             </div>
                           )
                         }
-                        {/* project description */}
+                        {/* Project description */}
                         <ul className="list-group list-group-flush text-start">
                           {
                             project.descriptionLong.map((str, index) =>
