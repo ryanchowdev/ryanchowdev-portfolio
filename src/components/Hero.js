@@ -3,12 +3,12 @@ import profilePic from "../assets/ryan-profile.jpg";
 function Hero () {
     return (
         <div className="container-fluid text-center lh-lg" id="home">
-          {/* CENTERED HERO */}
-          {/* px-4 py-5 my-5 */}
-          {/* TODO maybe put some animation when you load the page? */}
+          {/* Centered hero section */}
           <div className="d-flex align-items-center justify-content-center text-center border-bottom vh-100">
             <div className="d-inline">
-              <img className="d-block mx-auto mb-4 rounded-circle img-fluid" src={profilePic} alt="Ryan's profile pic" width="300"/>
+              {/* Profile picture */}
+              <img className="d-block mx-auto mb-4 rounded-circle img-fluid" src={profilePic} style={{width: "19rem"}} alt="Ryan's profile pic"/>
+              {/* Description */}
               <h1 className="display-5 fw-bold">Hi, I'm Ryan Chow</h1>
               <div className="col-lg-6 mx-auto">
                 <p className="lead mb-4">

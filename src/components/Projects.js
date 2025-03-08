@@ -1,5 +1,5 @@
 import React from "react";
-import portfolioCover from "../assets/cover-portfolio.jpeg"; // TODO may need to retake photo if we change site home screen
+import portfolioCover from "../assets/cover-portfolio.jpeg";
 import roommateHelperCover from "../assets/cover-roommate.jpg";
 import stockMarketCover from "../assets/cover-stock-market.jpg";
 import breadCover from "../assets/cover-bread.jpeg";
@@ -15,11 +15,6 @@ import ucscScraperCover from "../assets/cover-ucsc-scraper.jpg";
   descriptionShort - Brief description displayed on the outer card
   descriptionLong - Longer description shown within the modal, presented as a list of information
   coverImg - image which will be displayed on the front of the card as well as inside the modal
-
-  TODO
-  images - other images related to the project?
-  maybe shorten descriptionShort to just one line and have the picture take up most of the space?
-  maybe put descriptionLong as just a paragraph so it's easier to write about and list the features?
 */
 const projects = [
   {
@@ -53,11 +48,12 @@ const projects = [
       "Led a team of five developers to create this project, using SCRUM practices",
       "Designed as an assistant to help roommates manage various household tasks",
       "Some features include:",
-      "Notify users to perform scheduled tasks",
+      "Notify users to perform scheduled tasks (track who should take out garbage, clean, do dishes, etc.)",
       "Monetary system for tracking expenses and debt",
-      "Alarm system for household or other important events",
-      "...",
-      "and more.",
+      "Alarm system for household or other important events (house meetings, rent collection, etc.)",
+      "Google Maps lookup to assist with group activities such as new dining options or shopping",
+      "Weather lookup using OpenWeatherMap API",
+      "...and more.",
     ],
     coverImg: roommateHelperCover,
   },
@@ -70,24 +66,23 @@ const projects = [
       "Vue.js",
       "Bulma",
     ],
-    descriptionShort: "Stock Market Imitation is a dynamic website which provides a simulated stock market experience for users to practice investing without risking real money.",
+    descriptionShort: "This dynamic website provides a simulated stock market experience for users to practice investing without risking real money.",
     descriptionLong: [
       "Dynamic website created in collaboration with a team of five developers",
       "Enables users to practice investing in the stock market without risking real money",
       "Some features include:",
       "Simulated stock market behavior",
-      "Login system",
-      "Buy and sell stocks",
-      "Portfolio building", // TODO reword, track your performance in the portfolio
-      "Charts to track portfolio performance as well as historical stock prices",
+      "Ability to buy and sell stocks",
+      "Login system so users can create their own portfolios and track their performance",
+      "Charts to visualize portfolio performance as well as historical stock prices",
       "Forum to discuss with other users",
-      "... and more",
+      "... and more.",
     ],
     coverImg: stockMarketCover,
   },
   {
     id: 3,
-    title: "Bread & Thyme Website",
+    title: "Bakery Website",
     url: "https://github.com/ryanchowdev/website-bread-and-thyme",
     technologies: [
       "HTML",
@@ -115,8 +110,8 @@ const projects = [
     descriptionLong: [
       "Web scraper built with Python's Beautiful Soup library",
       "Used Tkinter library to create an easy-to-use GUI",
-      "Useful for UCSC students to quickly enroll in popular classes before others",
-      "Personally used this application to be notified when a space became available in classes that I hoped to join",
+      "Useful for UCSC students to enroll in popular classes before others",
+      "Personally used this application throughout college to be notified when a space became available in classes that I hoped to join",
     ],
     coverImg: ucscScraperCover,
   },
@@ -133,48 +128,32 @@ function modalId({project}) {
 }
 
 function Projects () {
-  // just have 2 cards per row with image and description for project
-  // upon clicking anywhere on the cards, a modal pops up (?)
-  // put github within modal, as well as extended description, technologies used, other information, etc
-  // TODO removed container-fluid for container - keep?
-  // we want the content contained within this area, but maybe extend the border line to be fluid/fill the entire width of the viewport?
-  // TODO watch out for overlapping sections - use inspect element
-  // TODO put some more clear indication that you can click on the boxes - maybe put animation on box when you hover over it
   return (
       <div className="container p-5 text-center lh-lg border-bottom" id="projects">
+        {/* My personal projects */}
         <h1>Projects</h1>
         <p>Here are some of the projects I've made in this past.</p>
         <p>Click on any project to learn more about it!</p>
-        {/* Display projects, 2 per row */}
-        {/* TODO Possibly change to image on card, then description to the side, only 1 project per row 
-        Maybe make cards bigger? */}
+        {/* Display projects
+            2 per row above size lg (desktop)
+            1 per row below size lg (mobile) */}
         <div className="row">
           {
             projects.map((project) =>(
               <React.Fragment key={project.id}>
-                {/* Card */}
-                <div className="col-12 col-md-6 my-3">
-                  {/* 
-                    For devices >= 768px: 2 columns per row at 50% width (col-md-6) (can also try col-md-4 to have 3 columns per row)
-                    For smaller devices, 1 column per row at 100% width (size 12)
-                    TODO Increase height of this section if needed?
-                    Make size of every box consistent instead of depending on the amount of text?
-                  */}
+                {/* Cards */}
+                <div className="col-12 col-lg-6 my-3">
                   {/* Trigger modal when clicking card */}
-                  <div className="card mx-auto" style={{width: '18rem'}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
+                  <div className="card mx-auto" style={{width: "18rem", cursor: "pointer"}} data-bs-toggle="modal" data-bs-target={modalTarget({project})}>
                     {/* Project cover image */}
-                    {/* TODO Maybe enlarge image when clicked so user can see in better detail? */}
                     <img loading="lazy" src={project.coverImg} className="card-img-top" alt={project.title} />
                     <div className="card-body">
-                      <h5 className="card-title">{project.title}</h5>
+                      <h4 className="card-title">{project.title}</h4>
                       <p className="card-text">{project.descriptionShort}</p>
-                      {/* TODO clicking github link also opens modal
-                      Change behavior: Remove this button outside -- instead put github link solely within modal, and make it more noticeable that cards can be clicked */}
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><i className="bi bi-github"></i> Github</a>
                     </div>
                   </div>
                 </div>
-                {/* TODO Modal - use xl, need to test on smaller screens, can change to lg */}
+                {/* Modal - use xl */}
                 <div className="modal fade" id={modalId({project})} tabIndex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                   <div className="modal-dialog modal-xl">
                     <div className="modal-content">
@@ -183,12 +162,17 @@ function Projects () {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
-                        {/* TODO maybe image carousel here if we want to add more images later? */}
+                        {/* Enlarged cover image */}
                         <img loading="lazy" src={project.coverImg} className="w-100" alt={project.title} />
-                        {/* Display the project's technologies in boxes */}
+                        {/* Link to GitHub repository */}
+                        <div className="mt-4">
+                          <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-secondary"><i className="bi bi-github"></i> Github</a>
+                          <br />
+                        </div>
+                        {/* Project technologies */}
                         {
                           project.technologies.map((technology, index) =>
-                            <div className="d-inline-flex mt-4 mb-1 p-1">
+                            <div className="d-inline-flex mt-2 mb-1 p-1">
                               <button type="button" className="btn btn-outline-primary" style={{pointerEvents: "none"}}>
                                 <React.Fragment key={index}>
                                   {technology}

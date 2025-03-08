@@ -14,18 +14,17 @@ function toggleTheme() {
 // Navbar
 function Navbar() {
     return (
-        // TODO navbar is overlapping the sections, can we offset when we click navbar section to go up more?
         <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
                 {/* Name on the left */}
-                <a className="navbar-brand" href="#">Ryan Chow</a>
+                <a className="navbar-brand" href="#home">Ryan Chow</a>
                 {/* Button for mobile controls */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                {/* Page sections on the right */}
+                {/* Page sections on the right - underline active section */}
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
                         {/* Sections */}
                         <li className="nav-item">
                             <a className="nav-link" aria-current="page" href="#home">Home</a>
