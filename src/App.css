@@ -43,19 +43,17 @@ html, body {
 
 /* body {
   padding-top: 50px;
-  padding-bottom: 50px;
-} */
-
-/* body {
   padding-top: 40px;
+  padding-top: 58px;
 } */
 
 /* Prevents content from being blocked by navbar when you navigate to it */
-/* TODO adjust values */
-*#hero:before, *#about:before, *#projects:before, *#contact:before, *#footer:before {
+/* #home:before, #footer:before */
+*#about:before, *#projects:before, *#contact:before {
   display: block;
   content: " ";
-  margin-top: -75px;
-  height: 75px;
+  padding-top: 3.5rem;
   visibility: hidden;
+  /* margin-top: -75px;
+  height: 75px; */
 }

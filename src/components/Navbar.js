@@ -1,12 +1,12 @@
 // Toggle between light and dark themes
 function toggleTheme() {
-  let currTheme = document.documentElement.getAttribute('data-bs-theme');
+  let currTheme = document.documentElement.getAttribute("data-bs-theme");
   // Switch to opposite of current theme
-  if (currTheme === 'dark') {
-    document.documentElement.setAttribute('data-bs-theme', 'light');
+  if (currTheme === "dark") {
+    document.documentElement.setAttribute("data-bs-theme", "light");
   }
   else {
-    document.documentElement.setAttribute('data-bs-theme', 'dark');
+    document.documentElement.setAttribute("data-bs-theme", "dark");
   }
   return;
 }
