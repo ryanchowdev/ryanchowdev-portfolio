@@ -26,16 +26,16 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav nav-underline ms-auto mb-2 mb-lg-0">
                         {/* Sections */}
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                             <a className="nav-link" aria-current="page" href="#home">Home</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                             <a className="nav-link" href="#about">About</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                             <a className="nav-link" href="#projects">Projects</a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                             <a className="nav-link" href="#contact">Contact</a>
                         </li>
                         {/* Divider */}
@@ -44,7 +44,7 @@ function Navbar() {
                             <hr className="d-lg-none my-2"></hr>
                         </li>
                         {/* Button to toggle Light/Dark mode */}
-                        <li className="nav-item">
+                        <li className="nav-item text-center">
                             <button type="button" className="btn" onClick={toggleTheme}>
                                 <i className="bi bi-sun-fill"></i>
                             </button>

@@ -37,23 +37,8 @@
   }
 } */
 
-html, body {
+body, html {
   height: 100%;
-}
-
-/* body {
-  padding-top: 50px;
-  padding-top: 40px;
-  padding-top: 58px;
-} */
-
-/* Prevents content from being blocked by navbar when you navigate to it */
-/* #home:before, #footer:before */
-*#about:before, *#projects:before, *#contact:before {
-  display: block;
-  content: " ";
-  padding-top: 3.5rem;
-  visibility: hidden;
-  /* margin-top: -75px;
-  height: 75px; */
+  /* Offset navbar when navigating to anchor elements - navbar height is 58px */
+  scroll-padding-top: 58px;
 }
