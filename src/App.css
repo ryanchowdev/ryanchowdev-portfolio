@@ -183,3 +183,21 @@ h1, h3, h4, h5 {
   opacity: 1;
 }
 
+/* Keep the hero box from widening forever; let it grow vertically */
+.hero-box {
+  max-width: 52rem;
+  width: 100%;
+}
+
+/* Optional: make the text column a bit narrower inside the box */
+.hero-text {
+  max-width: 42rem;   /* keeps lines readable */
+  margin-inline: auto;
+}
+
+/* Ensure long words/URLs wrap instead of stretching the box */
+.hero-box p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+

@@ -15,9 +15,9 @@ const projects = [
     descriptionShort:
       "This is my personal portfolio, which you are currently reading. This website showcases my professional skills and background.",
     descriptionLong: [
-      "Fully-responsive static website",
+      "Fully-responsive static website with modern design",
       "Showcases my web development skills and provides information about my academic and professional background",
-      "User-friendly interface for easy navigation",
+      "Clean, user-friendly interface for easy navigation",
       "Automatic light/dark mode for improved readability, with the option to toggle between modes",
     ],
     coverImg: portfolioCover,
@@ -31,7 +31,7 @@ const projects = [
       "Roommate Helper is a chat bot which helps roommates manage their shared living environment and responsibilities.",
     descriptionLong: [
       "Chat bot for the Discord messaging app",
-      "Led a team of five developers to create this project, using SCRUM practices",
+      "Served as Product Owner and team leader for a five-person group, using SCRUM practices",
       "Designed as an assistant to help roommates manage various household tasks",
       "Some features include:",
       "Notify users to perform scheduled tasks (track who should take out garbage, clean, do dishes, etc.)",
@@ -87,10 +87,9 @@ const projects = [
     descriptionShort:
       "UCSC Class Check is a web scraper which checks the availability of classes at UCSC, allowing one to quickly enroll in filled classes when a spot opens up.",
     descriptionLong: [
-      "Web scraper built with Python's Beautiful Soup library",
-      "Used Tkinter library to create an easy-to-use GUI",
-      "Useful for UCSC students to enroll in popular classes before others",
-      "Personally used this application throughout college to be notified when a space became available in classes that I hoped to join",
+      "Web scraper built with Python's Beautiful Soup library to monitor UCSC course enrollment in real time",
+      "Designed an clear and intuitive GUI using Tkinter",
+      "Implemented instant user notifications when seats became available, useful for UCSC students to secure enrollment in high-demand classes",
     ],
     coverImg: ucscScraperCover,
   },

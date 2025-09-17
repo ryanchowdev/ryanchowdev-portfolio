@@ -12,8 +12,21 @@ const skills = [
     category: "Front-End",
     items: ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Bootstrap", "Bulma"]
   },
-  { id: 2, category: "Back-End", items: ["PostgreSQL", "SQLite", "Py4web"] },
-  { id: 3, category: "Tools", items: ["Git / GitHub", "Linux / Unix", "LaTeX", "Figma"] },
+  { 
+    id: 2, 
+    category: "Back-End", 
+    items: ["PostgreSQL", "SQLite", "Py4web"]
+  },
+  { 
+    id: 3, 
+    category: "Tools", 
+    items: ["Git / GitHub", "Linux / Unix", "LaTeX", "Figma", "Microsoft Office suite"] 
+  },
+  {
+    id: 4,
+    category: "Operating Systems",
+    items: ["Windows", "MacOS", "Linux", "UNIX"]
+  },
 ];
 
 function About () {
@@ -29,18 +42,21 @@ function About () {
             <h3>My Background</h3>
             <p className="mb-0">
               <br/>
-              I'm currently working as a <b>Software Engineer Intern</b> at ByteNet Solutions.
-              I am a full-stack developer working on building, designing, and maintaining websites for our clients.
-              Each website is fully responsive and carefully crafted based on the client's needs and feedback.
-              In my present role, I am primarily focused on the front-end aspect of web development.
+              I'm currently working towards my <b>M.S. in Computer Science</b> at San Jose State University.
+              At SJSU, I am interested in getting involved with research related to <b>artificial intelligence</b>, <b>machine learning</b>, and <b>cyber security</b>.
+              To explore these interests, I'm working on projects with the <b>AI/ML Club</b> and <b>Cyber Intelligence & Security Club</b>.
               <br/><br/>
-              I recently graduated with a B.S. in Computer Science from University of California, Santa Cruz with Highest Honors in the Major. 
-              I earned a 3.86 GPA and was recognized for my excellent academic performance by receiving Cum Laude and Dean's Honors.
-              During my time at UC Santa Cruz, I also created various projects in both team environments and as an individual. 
-              You can check out these projects below in the <a href="#projects">Projects</a> section.  
+              I previously worked as a <b>Software Engineer Intern</b> at ByteNet Solutions.
+              As a full-stack developer, I designed and built websites for multiple clients.
+              I also helped with testing various projects for functionality, usability, and security.
+              <br/><br/>
+              I earned my <b>B.S. in Computer Science</b> from University of California, Santa Cruz with a 3.86 GPA. 
+              I received multiple awards for my excellent academic performance, including <b>Cum Laude</b>, <b>Highest Honors in the Major</b>, and <b>Dean's Honors</b>.
+              During my time at UC Santa Cruz, I created various projects in both team environments and as an individual, which you can check out below in the <a href="#projects">Projects</a> section.
               <br/><br/>
               I enjoy software engineering because I am constantly learning and improving my skills with the latest technology.
-              If you would like to contact me, feel free to reach out in the <a href="#contact">Contact</a> section below.
+              If you would like to contact me, feel free to reach out in the <a href="#contact">Contact</a> section below, 
+              or connect with me on <a href="https://www.linkedin.com/in/ryanchowdev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
               <br/><br/>
             </p>
           </div>
