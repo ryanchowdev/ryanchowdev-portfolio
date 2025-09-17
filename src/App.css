@@ -1,44 +1,185 @@
-/* .App {
-  text-align: center;
+/* /src/App.css */
+:root,
+[data-bs-theme="light"] {
+  /* Primary palette (Aero-ish blues) */
+  --bs-primary: #2b7bff;
+  --bs-secondary: #6f8bb3;
+  --bs-success: #41c28f;
+
+  /* Glass variables */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-text: #0b2447;
+  --glass-control-bg: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 10px 30px rgba(7, 35, 73, 0.2);
+
+  /* Subtle gradient glow color */
+  --bg-start: #0f1b2d;
+  --bg-mid: #1a3a63;
+  --bg-end: #2e8bc0;
+
+  --page-bg: #eaf3ff;   /* light solid blue */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-bs-theme="dark"] {
+  --bs-primary: #7ab8ff;
+  --bs-secondary: #9bb0c9;
+  --bs-success: #55d2a0;
+
+  --glass-bg: rgba(16, 25, 43, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-text: #e8f1ff;
+  --glass-control-bg: rgba(16, 25, 43, 0.65);
+  --glass-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+
+  --bg-start: #0b1220;
+  --bg-mid: #101d33;
+  --bg-end: #1f3e66;
+
+  --page-bg: #0b1220;   /* deep navy for dark mode */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-body, html {
+html,
+body {
   height: 100%;
-  /* Offset navbar when navigating to anchor elements - navbar height is 58px */
-  scroll-padding-top: 58px;
+  scroll-padding-top: 58px; /* offset for fixed navbar */
+  scroll-behavior: smooth;
 }
+
+/* Background gradient + soft vignette */
+body {
+  background:
+    /* radial-gradient(1200px 800px at 10% -20%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(1000px 600px at 120% 20%, rgba(255,255,255,0.06), transparent 60%),
+    linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 45%, var(--bg-end) 100%); */
+    var(--page-bg);
+  color: var(--glass-text);
+}
+
+/* ===== Aero / glass styles ===== */
+.aero-glass {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--glass-shadow);
+}
+
+.navbar.aero-glass {
+  border-radius: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Give contained content some breathing room when we wrap it in aero-glass */
+.aero-pad {
+  padding: 2.5rem;
+}
+
+/* Buttons: gentle glow on hover */
+.btn {
+  transition: transform 180ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0.75rem rgba(43, 123, 255, 0.5);
+  filter: brightness(1.05);
+}
+
+/* Inputs in glass panels */
+.aero-glass .form-control,
+.aero-glass .form-select,
+.aero-glass .form-control:focus {
+  background: var(--glass-control-bg);
+  border-color: var(--glass-border);
+  color: inherit;
+}
+
+/* ===== Reveal on scroll animation ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+.reveal.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .btn,
+  .card {
+    transition: none !important;
+  }
+}
+
+/* ===== Cards (projects) ===== */
+.project-card.card {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(.2,.6,.2,1), box-shadow 220ms ease;
+}
+.project-card.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Card image rounding stays flush with rounded corners */
+.project-card .card-img-top {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* ===== Modals (glassy) ===== */
+.modal-content.aero-glass {
+  background: var(--glass-bg);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Section headings: tiny shadow for readability on gradients */
+h1, h3, h4, h5 {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+}
+
+/* Make modals match the page background */
+.modal-content.aero-glass {
+  background: var(--page-bg) !important;   /* same color as body */
+  backdrop-filter: none;                    /* drop the blur */
+  -webkit-backdrop-filter: none;
+  border: 1px solid var(--glass-border);
+}
+
+/* Keep header/footer visually seamless */
+.modal-header,
+.modal-footer {
+  background: transparent;
+}
+
+/* Avoid grey list items inside the modal */
+.modal-content .list-group-item {
+  background-color: transparent;
+}
+
+/* Ensure close icon is visible in dark theme */
+[data-bs-theme="dark"] .modal-content .btn-close {
+  filter: invert(1);
+  opacity: .9;
+}
+[data-bs-theme="dark"] .modal-content .btn-close:hover {
+  opacity: 1;
+}
+
